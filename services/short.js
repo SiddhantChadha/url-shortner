@@ -46,7 +46,7 @@ const shortenUrl = async (req, res) => {
     success: "true",
     data: {
       longUrl: urlMapping.longUrl,
-      shortUrl: process.env.DOMAIN + "/" + urlMapping.shortUrl,
+      shortUrl: req.headers.host + "/" + urlMapping.shortUrl,
       createdAt: urlMapping.createdAt,
     },
   });
